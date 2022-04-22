@@ -1,0 +1,17 @@
+---
+version: "2.1"
+services:
+  calibre:
+    image: lscr.io/linuxserver/calibre:arch
+    container_name: calibre
+    environment: 
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /srv/externalssd/calibre/config:/config
+      - /srv/externalssd/downloads/Books:/import
+    ports:
+      - 8780:8080
+      - 8781:8081
+    restart: unless-stopped
