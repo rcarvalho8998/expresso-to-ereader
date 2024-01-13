@@ -13,8 +13,17 @@ To start the calibre image you just need to run the command:
 ```
 Access the <server_address>:8780 to get to the GUI.
 To automatically enable calibre to import the books, you need to:
-1. Click on "Add Books"
-2. 
+1. Click on "Add Books"'s down arrow
+
+2. Click on "Control the adding of books"
+
+3. Go to "Automatic adding" Tab
+
+4. Specify the "/import" folder
+
+5. Restart the container.
+
+Aftwards all book put in that folder will be added to the Calibre Database.
 
 
 # Using ebook-convert
