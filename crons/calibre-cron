@@ -1,0 +1,7 @@
+# Add you crontabs here #
+
+#* * * * * su abc -c /scripts/ebook-download-script.sh
+#* * * * * /scripts/ebook-download-script.sh >> /scripts/cron.log
+23 7 * * 5 /scripts/ebook-download-script.sh >> /var/log/cron.log
+
+# Don't remove the empty line at the end of this file. It is required to run the cron job

@@ -29,18 +29,14 @@ addpath /usr/bin
 addpath /command
 export PATH
 
+
 # Now we're good: s6-overlay-suexec is accessible via PATH, as are
 # all our binaries.
 # Run preinit as root, then run stage0 as the container's user (can be
 # root, can be a normal user).
 
-printenv | grep -v "no_proxy" > /etc/environment
-
-chmod +x /etc/cron.d/ebook-download-cron
-chmod +x /scripts/ebook-download-script.sh
-
-# Run crontab as abc which is the 1000 UID user
-crontab -u abc /etc/cron.d/ebook-download-cron 
+chmod +x /scripts/cron-init.sh
+/scripts/cron-init.sh
 
 exec s6-overlay-suexec \
   ' /package/admin/s6-overlay-3.1.5.0/libexec/preinit' \

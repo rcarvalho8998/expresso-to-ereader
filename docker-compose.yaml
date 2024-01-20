@@ -14,7 +14,7 @@ services:
       - /srv/externalssd/calibre/config:/config
       - /srv/externalssd/downloads/Books/complete:/import
       - ./recipes:/recipes
-      - ./crons/ebook-download-cron:/etc/cron.d/ebook-download-cron
+      - ./crons/calibre-cron:/etc/cron.d/calibre-cron
       - ./scripts:/scripts
     ports:
       - 8780:8080
