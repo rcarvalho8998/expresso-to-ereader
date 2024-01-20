@@ -11,8 +11,8 @@ services:
       - PGID=1000
       - TZ=Europe/London
     volumes:
-      - /srv/externalssd/calibre/config:/config
-      - /srv/externalssd/downloads/Books/complete:/import
+      - ${CALIBRE_CONFIG_FOLDER}:/config
+      - ${CALIBRE_IMPORT_FOLDER}:/import
       - ./recipes:/recipes
       - ./crons/calibre-cron:/etc/cron.d/calibre-cron
       - ./scripts:/scripts
@@ -25,3 +25,20 @@ services:
     - "/bin/bash"
     - "-c"
     - "chmod +x /scripts/init.sh && /scripts/init.sh"
+  calibre-web:
+    depends_on:
+      - calibre
+    image: lscr.io/linuxserver/calibre-web
+    container_name: calibre-web
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - DOCKER_MODS=linuxserver/calibre-web:calibre #optional
+      - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
+    volumes:
+      - ${CALIBRE_CONFIG_FOLDER}:/config
+      - ${CALIBRE_IMPORT_FOLDER}:/books
+    ports:
+      - 8783:8083
+    restart: unless-stopped
