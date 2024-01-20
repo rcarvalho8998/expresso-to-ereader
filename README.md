@@ -1,3 +1,16 @@
+# Expresso.pt to e-reader
+
+### expresso.pt
+Expresso is a weekly newspaper in Portugal. It has a subscription that allows a digital comsuption however it does not allow to read this in an e-reader. This is the solution I put together to enable me to have the newspaper every week in my e-reader.
+
+### Disclaimer
+
+Expresso is a paid newspaper and it needs it's subscribers to thrive. The files provided by this setup should not be distribued to unsubscribed users.
+If you want to become a subscriber you can always check their link:
+
+[expresso.pt](https://promo.impresa.pt/data/content/binaries/custom/expresso/digital/)
+
+
 # Calibre
 
 Calibre here serves as a database of books (self-managed by calibre and should not be touched), which is is under: "/config/Calibre Library".
